@@ -54,10 +54,12 @@ The project is divided into two main folders:
 ### Install dependencies for the frontend and backend:
 
 ```bash
-cd chatapp
+cd messaging-app
 npm install
+cd ..
 cd server
 npm install
+cd ..
 ```
 # Chat Application Setup Guide
 
@@ -97,20 +99,22 @@ npm run push
    ```bash
    cd server
    npm run dev
+   
    ```
 
    The backend server will start at `http://localhost:3001`.
 
 2. Start the frontend application:
+   start a new terminal 
 
    ```bash
-   cd chatapp
+   cd messaging-app
    npm run dev
    ```
 
    The frontend will be available at `http://localhost:5173`.
 
-3. Access the application:
+4. Access the application:
    Open your web browser and go to `http://localhost:5173`.
 
 ## Usage
