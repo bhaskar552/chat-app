@@ -70,7 +70,7 @@ cd ..
    ```bash
    PORT=3001
    CLIENT_URL=http://localhost:5173
-   DATABASE_URL="postgresql://your_user:your_password@your_host/chat-app-database?sslmode=require" ## fisr create a account in neon postgresql database and paste your database detalis here
+   DATABASE_URL="your neon postgres url"
    JWT_SECRET=your_secret_key
    ```
 
@@ -78,14 +78,12 @@ cd ..
 
 ## Database Setup
 
-Ensure your database has the necessary tables:
 
-- `users`: Stores user details like username, email, password, last_seen, isonline.
-- `messages`: Stores chat messages with fields like sender_id, receiver_id, content, timestamp, media_url, media_type, isread.
 
 Use Drizzle ORM migrations to create the database schema 
 run the migrations commands 
 ```bash
+cd server
 npm run migrate
 npm run push
 ```
@@ -97,7 +95,7 @@ npm run push
 1. Start the backend server:
 
    ```bash
-   cd server
+   
    npm run dev
    
    ```
@@ -132,17 +130,4 @@ npm run push
 - **Media Uploads**: Images and videos are stored on the server, with references in the database.
 - **Database Interactions**: Drizzle ORM is used for efficient and type-safe operations with Neon Postgres.
 
-## Security Considerations
 
-- Passwords are securely hashed before storage.
-- JWTs are used to maintain secure user sessions.
-- The `.env` file should remain confidential and excluded from version control.
-- Input validation and sanitization are implemented to prevent SQL injection and XSS attacks.
-
-## Scalability Tips
-
-For larger-scale deployments:
-
-- Implement a caching solution like Redis for frequently accessed data.
-- Consider using a load balancer to distribute traffic across multiple servers.
-- Optimize database queries and use indexing to improve performance.
